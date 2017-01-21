@@ -1,0 +1,19 @@
+.container {
+	height:80%;
+	margin:50px;
+	font-family: 'Raleway'; 
+	color:#9956a1; 
+	font-weight:bold;
+	background:#ffffff;
+	text-align:center;
+}
+
+.header {
+	color:#572567;
+	border-bottom: 1px solid black;
+}
+
+.error {
+	color: red;
+	font-weight:bold;
+}

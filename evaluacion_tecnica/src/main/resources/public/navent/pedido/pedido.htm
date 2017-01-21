@@ -1,0 +1,35 @@
+<div>
+	<form name="pedidoForm" ng-submit="$ctrl.submitForm(pedidoForm.$valid)" novalidate>
+		Nombre:<br/>
+  		<input type="text" name="nombre"
+  			ng-model="$ctrl.pedidoDataService.nombreData.nombre" 
+  			maxlength="$ctrl.pedidoDataService.nombreData.maxlength"
+  			ng-maxlength="$ctrl.pedidoDataService.nombreData.maxlength"
+  			ng-required="!$ctrl.pedidoDataService.nombreData.nombre"><br/>
+		<div class="error" 
+			ng-show="(pedidoForm.nombre.$dirty) && pedidoForm.nombre.$error.maxlength">
+			error: max length allowed is {{$ctrl.pedidoDataService.nombreData.maxlength}}
+		</div>
+		<div class="error" 
+			ng-show="(pedidoForm.nombre.$dirty || pedidoForm.$submitted) 
+				&& pedidoForm.nombre.$error.required">
+			error: field is required
+		</div>
+  		<br/>Monto:<br/>
+  		<input type="number" 
+  			name="monto"
+  			ng-model="$ctrl.pedidoDataService.monto"
+  			ng-required="!$ctrl.pedidoDataService.monto"><br/>
+    	<div class="error" 
+    		ng-show="(pedidoForm.monto.$dirty || pedidoForm.$submitted) 
+    			&& pedidoForm.monto.$error.required">
+  			error: field is required
+  	 	</div>
+    	<br/>Descuento:<br/>
+  		<input type="number" 
+  			name="descuento"
+  			ng-model="$ctrl.pedidoDataService.descuento">
+  		<br/><br/>
+  		<button type="submit" >Submit</button>
+	</form>
+</div>
